@@ -20,8 +20,12 @@ else:
 if place:
     # Get temperature/sky data
     try:
+        st.write(f"{place}, {days}")
         filtered_data = get_data(place, days)
+    except:
+        st.write(f"{filtered_data},{place}, {days}")
 
+    try:
         if option == "Temperature":
             temperatures = [dictionary["main"]["temp"] / 10 for dictionary in filtered_data]
             dates = [dictionary["dt_txt"] for dictionary in filtered_data]

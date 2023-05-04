@@ -1,8 +1,12 @@
 import requests
-import os
+from environs import Env
 
-# Go to openweathermap.prg and request an API key and paste it in API_KEY for this to work
-API_KEY = os.getenv("WEATHERAPI")
+env = Env()
+env.read_env()
+
+API_KEY = env("WEATHERAPI")
+
+
 
 def get_data(place, forecast_days):
     url = "https://api.openweathermap.org/data/2.5/" \
