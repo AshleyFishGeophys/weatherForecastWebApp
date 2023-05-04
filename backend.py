@@ -1,7 +1,8 @@
 import requests
+import os
 
 # Go to openweathermap.prg and request an API key and paste it in API_KEY for this to work
-API_KEY = ""
+API_KEY = os.getenv("WEATHERAPI")
 
 
 def get_data(place, forecast_days):
