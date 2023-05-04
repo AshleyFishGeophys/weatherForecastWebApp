@@ -4,7 +4,6 @@ import os
 # Go to openweathermap.prg and request an API key and paste it in API_KEY for this to work
 API_KEY = os.getenv("WEATHERAPI")
 
-
 def get_data(place, forecast_days):
     url = "https://api.openweathermap.org/data/2.5/" \
           f"forecast?q={place}&" \
@@ -18,4 +17,4 @@ def get_data(place, forecast_days):
 
 
 if __name__ == "__main__":
-    print(get_data(place="Tokyo", forecast_days=3))
+    print(get_data(place="Denver", forecast_days=3))
